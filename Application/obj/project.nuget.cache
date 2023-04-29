@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q6eJsbgD4GVPFgvTcBHx+pRE05Cw20av9nXIJNjUIkD9vt1Lc/O6ruShiUAQmnR+F2QF7Ci75wkYPEgT7bOhYQ==",
+  "success": true,
+  "projectFilePath": "/Users/maximetremblay-rheault/Documents/Coding/SchoolApi/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/maximetremblay-rheault/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
+    "/Users/maximetremblay-rheault/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/maximetremblay-rheault/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
