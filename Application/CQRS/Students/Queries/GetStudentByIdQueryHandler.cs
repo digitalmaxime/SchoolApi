@@ -1,19 +1,24 @@
+using AutoMapper;
+using Domain.Models;
 using Domain.RepositoryInterfaces;
 using MediatR;
 
 namespace Application.CQRS.Students.Queries;
 
-public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, Domain.Models.Student?>
+public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, StudentDto?>
 {
     private readonly ISchoolRepository _schoolRepository;
+    private readonly IMapper _mapper;
 
-    public GetStudentByIdQueryHandler(ISchoolRepository schoolRepository)
+    public GetStudentByIdQueryHandler(ISchoolRepository schoolRepository , IMapper mapper)
     {
         _schoolRepository = schoolRepository;
+        _mapper = mapper;
     }
-    public async Task<Domain.Models.Student?> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
+
+    public async Task<StudentDto?> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
     {
         var student = await _schoolRepository.GetStudentById(request.StudentId);
-        return student;
+        return _mapper.Map<StudentDto>(student);
     }
 }

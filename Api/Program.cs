@@ -1,3 +1,4 @@
+using Application.Configuration;
 using Application.CQRS.Students.Queries;
 using DAL.Configuration;
 using DAL.Repositories;
@@ -13,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureInfrastructureService(builder.Configuration);
+builder.Services.ConfigureApplicationService(builder.Configuration);
+
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetStudentByIdQuery>());
 
 var app = builder.Build();

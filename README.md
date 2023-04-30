@@ -32,7 +32,23 @@ add nuget package to both ``/Api`` and ``/DAL`` projects
 
 ```$ dotnet add package mediatR```
 
-<h3>Program.cs configuration</h3>
-builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
+<h2>AutoMapper</h2>
+under ``/Application`` add AutoMapper nuget package
 
+```$ dotnet add package AutoMapper```
 
+In ``/Application/Configuration`` where you want the DI to happen import the following nuget 
+
+```$  dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection ```
+
+*Note: you might want to setup AutoMapper under ``/DAL`` as well if you intend to map externally fetched object to domain object*
+
+In `ConfigureApplicationService` set :
+
+``services.AddAutoMapper(cfg => cfg.AddProfile(typeof(StudentMappingProfile)));``
+
+or 
+
+``services.AddAutoMapper(typeof(StudentMappingProfile));``
+
+this way, DI for AutoMapper will be enabled and configured with the `: Profile` classes

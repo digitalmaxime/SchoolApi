@@ -1,3 +1,4 @@
+using Application.CQRS.Students;
 using Application.CQRS.Students.Queries;
 using Domain.Models;
 using Domain.RepositoryInterfaces;
@@ -19,10 +20,10 @@ public class StudentController : ControllerBase
     
     [HttpGet]
     [Route("GetStudentById")]
-    public async Task<ActionResult<Student>> GetStudentById(int studentId)
+    public async Task<ActionResult<StudentDto>> GetStudentById(int studentId)
     {
-        var student = await _mediator.Send(new GetStudentByIdQuery(studentId));
-
+        StudentDto? student = await _mediator.Send(new GetStudentByIdQuery(studentId));
+        
         if (student == null)
         {
             return NotFound();
