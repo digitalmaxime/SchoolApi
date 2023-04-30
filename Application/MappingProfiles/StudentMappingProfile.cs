@@ -12,7 +12,7 @@ public class StudentMappingProfile : Profile
                 .ForMember(s => 
                     s.StudentName, opt => opt.MapFrom(src => src.StudentName))
                 .ForMember(s => 
-                    s.IsAdult, opt => opt.MapFrom( x =>  true) );
+                    s.IsAdult, opt => opt.MapFrom( x =>  DateTime.Now.Year - x.DateOfBirth.Value.Year >= 18) );
 
             CreateMap<StudentDto, Student>()
                 .ForMember(dest => 
