@@ -1,9 +1,8 @@
 using AutoMapper;
-using Domain.Models;
-using Domain.RepositoryInterfaces;
+using Contacts.RepositoryInterfaces;
 using MediatR;
 
-namespace Application.CQRS.Students.Queries.Delete;
+namespace Application.CQRS.Students.Commands.Delete;
 
 public class DeleteStudentCommandHandler : IRequestHandler<DeleteStudentCommand, StudentDto?>
 {

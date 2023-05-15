@@ -1,6 +1,6 @@
 using Domain.Models;
 
-namespace Domain.RepositoryInterfaces;
+namespace Contacts.RepositoryInterfaces;
 
 public interface ISchoolRepository
 {
@@ -17,4 +17,5 @@ public interface ISchoolRepository
     // Task<Course?> GetCourseById(int id); 
     Task<ICollection<Student>> GetAllStudents();
     Task<Student?> DeleteStudentById(int studentId);
+    Task<Student?> AddStudent(string studentName, DateTime dateOfBirth, int? GradeId);
 }

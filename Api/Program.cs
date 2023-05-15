@@ -1,8 +1,8 @@
 using Application.Configuration;
 using Application.CQRS.Students.Queries;
+using Application.CQRS.Students.Queries.Create;
 using DAL.Configuration;
 using DAL.Repositories;
-using Domain.RepositoryInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +36,7 @@ app.MapControllers();
 app.MapGet("/", () => "Hey man, checkout '/swagger'!");
 
 app.MapGet("/student/{studentId}/loves/{bookId}", 
-    (int studentId, int bookId) => $"The student id {userId} loves book id {bookId}");
+    (int studentId, int bookId) => $"The student id {studentId} loves book id {bookId}");
 
 
 app.Run();

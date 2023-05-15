@@ -1,5 +1,5 @@
+using Contacts.RepositoryInterfaces;
 using Domain.Models;
-using Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories;
@@ -47,5 +47,22 @@ public class SchoolRepository : ISchoolRepository
         return student;
     }
     
-    
+    public async Task<Student?> AddStudent(string studentName, DateTime dateOfBirth, int? GradeId)
+    {
+        // var grade = await _schoolContext.Grades.FindAsync(request.GradeId);
+
+        // if (grade == null) return null;
+
+        var student = new Student
+        {
+            StudentName = studentName,
+            DateOfBirth = dateOfBirth
+            // Grade = grade
+        };
+
+        _schoolContext.Add(student);
+        await _schoolContext.SaveChangesAsync();
+
+        return student;
+    }
 }

@@ -1,8 +1,8 @@
 using AutoMapper;
-using Domain.RepositoryInterfaces;
+using Contacts.RepositoryInterfaces;
 using MediatR;
 
-namespace Application.CQRS.Students.Queries;
+namespace Application.CQRS.Students.Queries.Create;
 
 public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, List<StudentDto>>
 {

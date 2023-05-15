@@ -1,6 +1,5 @@
-using Domain.Models;
 using MediatR;
 
-namespace Application.CQRS.Students.Queries;
+namespace Application.CQRS.Students.Queries.Create;
 
 public record GetStudentByIdQuery(int StudentId) : IRequest<StudentDto?>;

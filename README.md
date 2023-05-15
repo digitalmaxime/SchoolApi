@@ -1,4 +1,23 @@
 <h2>Entity Framework Core</h2>
+
+<h3>Create New MySql Connection</h3>
+In MySql press + sign to create a new MySql Connection
+
+Create a new query and setup a password
+
+`select current_user();
+set password = 'test123';`
+
+In the Api layer add the connectionStr to the appSettings.json
+
+```
+"ConnectionStrings": {
+    "DefaultConnection":"Server=localhost;Port=3306;Uid=root;Database=School;Pwd=test123;SslMode=Required"
+}
+```
+
+
+
 <h3>/Api Nugets</h3>
 
 ``dotnet package add Microsoft.EntityFrameworkCore.Design``

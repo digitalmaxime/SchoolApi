@@ -1,5 +1,5 @@
+using Contacts.RepositoryInterfaces;
 using DAL.Repositories;
-using Domain.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

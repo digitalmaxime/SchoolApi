@@ -1,9 +1,8 @@
 using AutoMapper;
-using Domain.Models;
-using Domain.RepositoryInterfaces;
+using Contacts.RepositoryInterfaces;
 using MediatR;
 
-namespace Application.CQRS.Students.Queries;
+namespace Application.CQRS.Students.Queries.Create;
 
 public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, StudentDto?>
 {

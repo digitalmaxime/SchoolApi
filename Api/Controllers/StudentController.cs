@@ -1,8 +1,9 @@
 using Application.CQRS.Students;
+using Application.CQRS.Students.Commands.Create;
+using Application.CQRS.Students.Commands.Delete;
 using Application.CQRS.Students.Queries;
-using Application.CQRS.Students.Queries.Delete;
+using Application.CQRS.Students.Queries.Create;
 using Domain.Models;
-using Domain.RepositoryInterfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,6 +47,33 @@ public class StudentController : ControllerBase
     //     throw new NotImplementedException();
     // }
     
+    // [HttpGet]
+    // [Route("GetAddressByStudentById")]
+    // public async Task<ActionResult<Student>> GetAddressByStudentById(int studentId)
+    // {
+    //     var studentAddress = await _mediator.Send(new GetStudentAddressQuery(studentId));
+    //
+    //     if (studentAddress == null)
+    //     {
+    //         return NotFound("No student address found..");
+    //     }
+    //
+    //     return Ok(studentAddress);
+    // }
+    
+    [HttpPost]
+    [Route("AddStudent")]
+    public async Task<ActionResult<Student>> AddStudent(AddStudentCommandDto request)
+    {
+        var student = await _mediator.Send(request);
+
+        if (student == null)
+        {
+            return BadRequest("Error while creating new student, maybe Grade is not defined");
+        }
+
+        return Ok(student);
+    }
     
     [HttpDelete]
     [Route("DeleteStudent")]
