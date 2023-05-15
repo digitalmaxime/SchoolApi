@@ -33,4 +33,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => "Hey man, checkout '/swagger'!");
+
+app.MapGet("/student/{studentId}/loves/{bookId}", 
+    (int studentId, int bookId) => $"The student id {userId} loves book id {bookId}");
+
+
 app.Run();

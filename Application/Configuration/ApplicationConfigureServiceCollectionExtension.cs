@@ -1,8 +1,7 @@
 using Application.MappingProfiles;
 using Application.Services;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AutoMapper;
+using Microsoft.Extensions.Configuration;
 
 namespace Application.Configuration;
 
