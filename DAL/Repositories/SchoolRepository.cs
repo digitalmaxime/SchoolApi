@@ -21,4 +21,31 @@ public class SchoolRepository : ISchoolRepository
             ;
         return student;
     }
+    
+    public async Task<ICollection<Student>> GetAllStudents()
+    {
+        var students = await _schoolContext.Students
+            // .Include(s => s.Grade)
+            // .Include(s => s.StudentAddress)
+            // .Include(s => s.Courses)
+            .ToListAsync();
+
+        return students;
+    }
+    
+    public async Task<Student?> DeleteStudentById(int studentId)
+    {
+        var student = await _schoolContext.Set<Student>()
+            .FindAsync(studentId);
+
+        if (student != null)
+        {
+            _schoolContext.Students.Remove(student);
+            await _schoolContext.SaveChangesAsync();
+        }
+
+        return student;
+    }
+    
+    
 }
