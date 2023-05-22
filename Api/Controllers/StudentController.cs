@@ -1,8 +1,8 @@
-using Application.CQRS.Students;
-using Application.CQRS.Students.Commands.Create;
-using Application.CQRS.Students.Commands.Delete;
-using Application.CQRS.Students.Queries;
-using Application.CQRS.Students.Queries.Create;
+using Application.CQRS.Dtos;
+using Application.CQRS.StudentAddressDto;
+using Application.CQRS.StudentsDto.Commands.Create;
+using Application.CQRS.StudentsDto.Commands.Delete;
+using Application.CQRS.StudentsDto.Queries.Read;
 using Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -46,20 +46,7 @@ public class StudentController : ControllerBase
     // {
     //     throw new NotImplementedException();
     // }
-    
-    // [HttpGet]
-    // [Route("GetAddressByStudentById")]
-    // public async Task<ActionResult<Student>> GetAddressByStudentById(int studentId)
-    // {
-    //     var studentAddress = await _mediator.Send(new GetStudentAddressQuery(studentId));
-    //
-    //     if (studentAddress == null)
-    //     {
-    //         return NotFound("No student address found..");
-    //     }
-    //
-    //     return Ok(studentAddress);
-    // }
+
     
     [HttpPost]
     [Route("AddStudent")]
@@ -88,5 +75,33 @@ public class StudentController : ControllerBase
 
         return Ok(deletedStudent); 
     }
+    
+    [HttpPost]
+    [Route("AddStudentAddress")]
+    public async Task<ActionResult<StudentDto?>> AddStudentAddress(AddStudentAddressCommand request)
+    {
+        var student = await _mediator.Send(request);
+        
+        if (student == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(student); 
+    }
+
+        // [HttpGet]
+    // [Route("GetAddressByStudentById")]
+    // public async Task<ActionResult<Student>> GetAddressByStudentById(int studentId)
+    // {
+    //     var studentAddress = await _mediator.Send(new GetStudentAddressQuery(studentId));
+    //
+    //     if (studentAddress == null)
+    //     {
+    //         return NotFound("No student address found..");
+    //     }
+    //
+    //     return Ok(studentAddress);
+    // }
 }
     

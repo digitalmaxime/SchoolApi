@@ -1,8 +1,6 @@
 using Application.Configuration;
-using Application.CQRS.Students.Queries;
-using Application.CQRS.Students.Queries.Create;
+using Application.CQRS.StudentsDto.Queries.Read;
 using DAL.Configuration;
-using DAL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Contacts.RepositoryInterfaces;
 using MediatR;
-
-namespace Application.CQRS.Students.Commands.Create;
+using Application.CQRS.Dtos;
+namespace Application.CQRS.StudentsDto.Commands.Create;
 
 public class AddStudentCommandHandler : IRequestHandler<AddStudentCommandDto, StudentDto>
 {

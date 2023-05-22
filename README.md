@@ -47,7 +47,9 @@ $ dotnet ef database update --project DAL --startup-project Api
 ---
 
 <h2>MediatR</h2>
-add nuget package to both ``/Api`` and ``/DAL`` projects
+add nuget package to both
+
+`/Api`and ``/DAL`` projects
 
 ```$ dotnet add package mediatR```
 

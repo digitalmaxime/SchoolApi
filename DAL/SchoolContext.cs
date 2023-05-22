@@ -10,6 +10,15 @@ public class SchoolContext : DbContext
     {
     }
 
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<StudentAddress>()
+            .HasIndex(sa => sa.StudentId)
+            .IsUnique();
+    }
+
+
     // Entity Sets :
     public DbSet<Student> Students => Set<Student>(); // Entity set for Entity 'Student' ..
+    public DbSet<StudentAddress> StudentAddresses => Set<StudentAddress>();
 }

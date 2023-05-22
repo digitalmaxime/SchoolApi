@@ -16,6 +16,6 @@ public class Student
     // public int GradeId { get; set; }  // PK of Grade (here Student is the dependent entity, it needs a GradeId to live)
 
     // public ICollection<Course> Courses { get; set; } = new List<Course>();
-    // public StudentAddress? StudentAddress { get; set; } // 1 to 1 relationship (Student is the independent entity, it can live without an address)
+    public StudentAddress? StudentAddress { get; set; } // 1 to 1 relationship (Student is the independent entity, it can live without an address)
  
 }

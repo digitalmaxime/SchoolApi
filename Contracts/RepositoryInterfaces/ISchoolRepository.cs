@@ -8,8 +8,7 @@ public interface ISchoolRepository
     // Task<Student?> AddStudent(AddStudentDto student);
     // Student UpdateStudent(Student student);
     //
-    // Task<StudentAddress?> GetAddressByStudentId(int studentId);
-    // Task<Student?> AddStudentAddress(AddStudentAddressDto request);
+    Task<Student?> AddStudentAddress(int studentId, string address, string city, string state);
     // Task<Student?> AddCourseToStudent(int studentId, int courseId);
     // Task<Course?> AddStudentToCourse(int studentId, int courseId);
     // Task<Course?> AddCourse(AddCourseDto request);
@@ -18,4 +17,6 @@ public interface ISchoolRepository
     Task<ICollection<Student>> GetAllStudents();
     Task<Student?> DeleteStudentById(int studentId);
     Task<Student?> AddStudent(string studentName, DateTime dateOfBirth, int? GradeId);
+    Task<StudentAddress?> GetAddressByStudentId(int studentId);
+
 }
