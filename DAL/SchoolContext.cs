@@ -21,4 +21,5 @@ public class SchoolContext : DbContext
     // Entity Sets :
     public DbSet<Student> Students => Set<Student>(); // Entity set for Entity 'Student' ..
     public DbSet<StudentAddress> StudentAddresses => Set<StudentAddress>();
+    public DbSet<AcademicLevel> AcademicLevels => Set<AcademicLevel>();
 }
