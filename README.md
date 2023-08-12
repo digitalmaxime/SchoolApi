@@ -20,15 +20,15 @@ In the Api layer add the connectionStr to the appSettings.json
 
 <h3>/Api Nugets</h3>
 
-``dotnet package add Microsoft.EntityFrameworkCore.Design``
+``dotnet add package Microsoft.EntityFrameworkCore.Design``
 
 (because ``/Infrastructure`` has entity framework core stuff, but Api holds the connection str)
 
 <h3>/DAL Nugets</h3>
 
-``dotnet package add Microsoft.EntityFrameworkCore``
+``dotnet add package Microsoft.EntityFrameworkCore``
 
-``dotnet package add  MySql.EntityFrameworkCore ``
+``dotnet add package  MySql.EntityFrameworkCore ``
 
 <h3>Cmd Line</h3>
 
